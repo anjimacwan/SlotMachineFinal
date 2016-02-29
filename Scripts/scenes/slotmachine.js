@@ -244,7 +244,7 @@ var scenes;
             }
         };
         return SlotMachine;
-    }(objects.Scene));
+    })(objects.Scene);
     scenes.SlotMachine = SlotMachine;
 })(scenes || (scenes = {}));
 //# sourceMappingURL=slotmachine.js.map
