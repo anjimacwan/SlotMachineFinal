@@ -45,7 +45,7 @@ var scenes;
             this.addChild(this._spinButton);
             this._spinButton.on("click", this._spinButtonClick, this);
             // add JackPot Text to the scene
-            this._jackpotText = new objects.Label(this.jackpot.toString(), "14px Consolas", "#ff0000", 353, 107, false);
+            this._jackpotText = new objects.Label(this.jackpot.toString(), "14px Consolas", "#ff0000", 340, 90, false);
             this._jackpotText.textAlign = "right";
             this.addChild(this._jackpotText);
             // add Credits Text to the scene
@@ -203,7 +203,7 @@ var scenes;
             for (var reel = 0; reel < 3; reel++) {
                 this._reels[reel] = new createjs.Bitmap(assets.getResult("Blank"));
                 this._reels[reel].x = 180 + (reel * 105);
-                this._reels[reel].y = 180;
+                this._reels[reel].y = 170;
                 this.addChild(this._reels[reel]);
                 console.log("reel" + reel + " " + this._reels[reel]);
             }
