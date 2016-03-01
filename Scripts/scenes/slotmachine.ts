@@ -27,6 +27,7 @@ module scenes {
         private _blanks = 0;
         
         private _quitButton: objects.Button;
+        private _resetButton: objects.Button;
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
             super();
@@ -66,12 +67,25 @@ module scenes {
             // add the QUIT button to the SLOT_MACHINE scene
             this._quitButton = new objects.Button(
                 "Quit",
-                config.Screen.CENTER_X,
+                420,
                 500, true);
             this.addChild(this._quitButton);
             
-            // START Button event listener
+            // QUIT Button event listener
             this._quitButton.on("click", this._quitButtonClick, this);
+            
+            
+            // add the RESET button to the SLOT_MACHINE scene
+            this._resetButton = new objects.Button(
+                "Reset",
+                220,
+                500, true);
+            this.addChild(this._resetButton);
+            
+            // RESET Button event listener
+            this._resetButton.on("click", this._resetButtonClick, this);
+            
+            
         
             // add JackPot Text to the scene
             this._jackpotText = new objects.Label(
@@ -133,6 +147,14 @@ module scenes {
         private _quitButtonClick(event: createjs.MouseEvent) {
           //GO TO GAMEOVER SCENE
                 scene = config.Scene.GAME_OVER;
+                changeScene();
+           
+        }
+        
+        // RESET Button click event handler
+        private _resetButtonClick(event: createjs.MouseEvent) {
+          //GO TO GAMEOVER SCENE
+                scene = config.Scene.MENU;
                 changeScene();
            
         }

@@ -45,10 +45,15 @@ var scenes;
             this.addChild(this._spinButton);
             this._spinButton.on("click", this._spinButtonClick, this);
             // add the QUIT button to the SLOT_MACHINE scene
-            this._quitButton = new objects.Button("Quit", config.Screen.CENTER_X, 500, true);
+            this._quitButton = new objects.Button("Quit", 420, 500, true);
             this.addChild(this._quitButton);
-            // START Button event listener
+            // QUIT Button event listener
             this._quitButton.on("click", this._quitButtonClick, this);
+            // add the RESET button to the SLOT_MACHINE scene
+            this._resetButton = new objects.Button("Reset", 220, 500, true);
+            this.addChild(this._resetButton);
+            // RESET Button event listener
+            this._resetButton.on("click", this._resetButtonClick, this);
             // add JackPot Text to the scene
             this._jackpotText = new objects.Label(this.jackpot.toString(), "14px Consolas", "white", 335, 90, false);
             this._jackpotText.textAlign = "right";
@@ -82,6 +87,12 @@ var scenes;
         SlotMachine.prototype._quitButtonClick = function (event) {
             //GO TO GAMEOVER SCENE
             scene = config.Scene.GAME_OVER;
+            changeScene();
+        };
+        // RESET Button click event handler
+        SlotMachine.prototype._resetButtonClick = function (event) {
+            //GO TO GAMEOVER SCENE
+            scene = config.Scene.MENU;
             changeScene();
         };
         //PRIVATE METHODS
