@@ -49,15 +49,15 @@ var scenes;
             this._jackpotText.textAlign = "right";
             this.addChild(this._jackpotText);
             // add Credits Text to the scene
-            this._creditsText = new objects.Label(this.playerMoney.toString(), "14px Consolas", "#ff0000", 240, 303, false);
+            this._creditsText = new objects.Label(this.playerMoney.toString(), "14px Consolas", "#ff0000", 230, 303, false);
             this._creditsText.textAlign = "right";
             this.addChild(this._creditsText);
             // add Bet Text to the scene
-            this._betText = new objects.Label(this.playerBet.toString(), "14px Consolas", "#ff0000", 300, 303, false);
+            this._betText = new objects.Label(this.playerBet.toString(), "14px Consolas", "#ff0000", 330, 303, false);
             this._betText.textAlign = "right";
             this.addChild(this._betText);
             // add Result Text to the scene
-            this._resultText = new objects.Label(this.winnings.toString(), "14px Consolas", "#ff0000", 350, 303, false);
+            this._resultText = new objects.Label(this.winnings.toString(), "14px Consolas", "#ff0000", 430, 303, false);
             this._resultText.textAlign = "right";
             this.addChild(this._resultText);
             // Initialize Array of Bitmaps 

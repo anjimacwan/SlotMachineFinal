@@ -75,7 +75,7 @@ module scenes {
                 this.playerMoney.toString(),
                 "14px Consolas",
                 "#ff0000",
-                240, 303, false);
+                230, 303, false);
             this._creditsText.textAlign = "right";
             this.addChild(this._creditsText);
             
@@ -84,7 +84,7 @@ module scenes {
                 this.playerBet.toString(),
                 "14px Consolas",
                 "#ff0000",
-                300, 303, false);
+                330, 303, false);
             this._betText.textAlign = "right";
             this.addChild(this._betText);
             
@@ -93,7 +93,7 @@ module scenes {
                 this.winnings.toString(),
                 "14px Consolas",
                 "#ff0000",
-                350, 303, false);
+                430, 303, false);
             this._resultText.textAlign = "right";
             this.addChild(this._resultText);
         
