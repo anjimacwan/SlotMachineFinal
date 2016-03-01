@@ -1,4 +1,4 @@
-// MENU SCENE
+// SLOT MACHINE SCENE
 module scenes {
     export class SlotMachine extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
@@ -25,6 +25,8 @@ module scenes {
         private _bells = 0;
         private _sevens = 0;
         private _blanks = 0;
+        
+        private _quitButton: objects.Button;
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
             super();
@@ -60,12 +62,22 @@ module scenes {
             this._spinButton = new objects.Button("SpinButton", 402, 382, false);
             this.addChild(this._spinButton);
             this._spinButton.on("click", this._spinButtonClick, this); 
+            
+            // add the QUIT button to the SLOT_MACHINE scene
+            this._quitButton = new objects.Button(
+                "Quit",
+                config.Screen.CENTER_X,
+                500, true);
+            this.addChild(this._quitButton);
+            
+            // START Button event listener
+            this._quitButton.on("click", this._quitButtonClick, this);
         
             // add JackPot Text to the scene
             this._jackpotText = new objects.Label(
                 this.jackpot.toString(),
                 "14px Consolas",
-                "#ff0000",
+                "white",
                 335, 90, false);
             this._jackpotText.textAlign = "right";
             this.addChild(this._jackpotText);
@@ -113,6 +125,16 @@ module scenes {
         // SLOT_MACHINE Scene updates here
         public update(): void {
 
+        }
+        
+        //EVENT HANDLERS ++++++++++++++++++++
+        
+        // QUIT Button click event handler
+        private _quitButtonClick(event: createjs.MouseEvent) {
+          //GO TO GAMEOVER SCENE
+                scene = config.Scene.GAME_OVER;
+                changeScene();
+           
         }
         
         //PRIVATE METHODS
@@ -255,7 +277,7 @@ module scenes {
             for (var reel: number = 0; reel < 3; reel++) {
                 this._reels[reel] = new createjs.Bitmap(assets.getResult("Blank"));
                 this._reels[reel].x = 180 + (reel * 105);
-                this._reels[reel].y = 170;
+                this._reels[reel].y = 165;
                 this.addChild(this._reels[reel]);
                 console.log("reel" + reel + " " + this._reels[reel]);
             }

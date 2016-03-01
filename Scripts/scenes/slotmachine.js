@@ -3,7 +3,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-// MENU SCENE
+// SLOT MACHINE SCENE
 var scenes;
 (function (scenes) {
     var SlotMachine = (function (_super) {
@@ -44,8 +44,13 @@ var scenes;
             this._spinButton = new objects.Button("SpinButton", 402, 382, false);
             this.addChild(this._spinButton);
             this._spinButton.on("click", this._spinButtonClick, this);
+            // add the QUIT button to the SLOT_MACHINE scene
+            this._quitButton = new objects.Button("Quit", config.Screen.CENTER_X, 500, true);
+            this.addChild(this._quitButton);
+            // START Button event listener
+            this._quitButton.on("click", this._quitButtonClick, this);
             // add JackPot Text to the scene
-            this._jackpotText = new objects.Label(this.jackpot.toString(), "14px Consolas", "#ff0000", 335, 90, false);
+            this._jackpotText = new objects.Label(this.jackpot.toString(), "14px Consolas", "white", 335, 90, false);
             this._jackpotText.textAlign = "right";
             this.addChild(this._jackpotText);
             // add Credits Text to the scene
@@ -71,6 +76,13 @@ var scenes;
         };
         // SLOT_MACHINE Scene updates here
         SlotMachine.prototype.update = function () {
+        };
+        //EVENT HANDLERS ++++++++++++++++++++
+        // QUIT Button click event handler
+        SlotMachine.prototype._quitButtonClick = function (event) {
+            //GO TO GAMEOVER SCENE
+            scene = config.Scene.GAME_OVER;
+            changeScene();
         };
         //PRIVATE METHODS
         /* Utility function to check if a value falls within a range of bounds */
@@ -203,7 +215,7 @@ var scenes;
             for (var reel = 0; reel < 3; reel++) {
                 this._reels[reel] = new createjs.Bitmap(assets.getResult("Blank"));
                 this._reels[reel].x = 180 + (reel * 105);
-                this._reels[reel].y = 170;
+                this._reels[reel].y = 165;
                 this.addChild(this._reels[reel]);
                 console.log("reel" + reel + " " + this._reels[reel]);
             }
