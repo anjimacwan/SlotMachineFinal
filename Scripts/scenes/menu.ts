@@ -1,3 +1,4 @@
+//Menu scene created by Anjali Macwan on Feb 29, 2016
 // MENU SCENE
 module scenes {
     export class Menu extends objects.Scene {

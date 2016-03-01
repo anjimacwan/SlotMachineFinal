@@ -10,3 +10,6 @@
 /// <reference path="../scenes/gameover.ts" />
 /// <reference path="../scenes/slotmachine.ts" />
 /// <reference path="../scenes/menu.ts" />
+
+
+//Reference.ts created by Anjali Macwan on Feb 29, 2016

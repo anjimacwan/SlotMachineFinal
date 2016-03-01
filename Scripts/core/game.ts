@@ -1,5 +1,7 @@
 ﻿/// <reference path = "_reference.ts" />
 
+//Game.ts created by Anjali Macwan on Feb 29, 2016
+
 // global variables
 var assets: createjs.LoadQueue;
 var canvas: HTMLElement;

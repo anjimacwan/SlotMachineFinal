@@ -1,3 +1,5 @@
+//SLOT_MACHINE scene created by Anjali Macwan on Feb 29, 2016
+
 // SLOT MACHINE SCENE
 module scenes {
     export class SlotMachine extends objects.Scene {

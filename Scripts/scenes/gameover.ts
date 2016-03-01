@@ -1,3 +1,5 @@
+//GameOver scene created by Anjali Macwan on Feb 29, 2016
+
 // GAME_OVER SCENE
 module scenes {
     export class GameOver extends objects.Scene {
