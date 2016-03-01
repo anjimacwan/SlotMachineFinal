@@ -202,7 +202,7 @@ var scenes;
             this._reels = new Array();
             for (var reel = 0; reel < 3; reel++) {
                 this._reels[reel] = new createjs.Bitmap(assets.getResult("Blank"));
-                this._reels[reel].x = 180 + (reel * 103);
+                this._reels[reel].x = 180 + (reel * 105);
                 this._reels[reel].y = 180;
                 this.addChild(this._reels[reel]);
                 console.log("reel" + reel + " " + this._reels[reel]);
